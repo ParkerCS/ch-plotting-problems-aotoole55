@@ -14,3 +14,28 @@
 
 
 
+import csv
+import numpy as np
+import matplotlib.pyplot as plt
+
+file = open('chi_life_expectancy.txt', 'r')
+
+life_data = []
+
+reader = csv.reader(file, delimiter = '\t')
+
+
+for line in reader:
+    life_data.append(line)
+print(life_data)
+
+x_list = []
+y_list = []
+
+for i in range(len(life_data)):
+    x = life_data[1:][1]
+    x_list.append(x)
+    y = life_data[1:][8]
+    y_list.append(y)
+
+print(x_list)
